@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  server:
+    container_name: server
+    build:
+      context: .
+    env_file:
+      - .production.env
+    ports:
+      - 3000:3000
+    command: npm run start:prod
+    depends_on:
+      - database
+    restart: always
+
+  database:
+    container_name: postgres
+    image: postgres:latest
+    env_file:
+      - .production.env
+    environment:
+      PG_DATA: /var/lib/postgresql/data
+    ports:
+      - 5435:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - 5050:80
+    depends_on:
+      - database
+    env_file:
+      - .production.env
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+
+volumes:
+  pgdata:
+  pgadmin:

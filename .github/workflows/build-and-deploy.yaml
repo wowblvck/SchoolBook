@@ -1,0 +1,83 @@
+---
+name: Build and Deploy App to AWS
+on:
+  push:
+    branches: [develop]
+    paths:
+      - "client/**"
+      - "server/**"
+
+jobs:
+  build-and-deploy-client:
+    name: Build and Deploy Client
+    environment: deploy:client
+    runs-on: ubuntu-latest
+    env:
+      BUCKET: school-book.wowblvck.tech
+      WORKING_DIRECTORY: ./client
+      DIST: build
+      REGION: us-east-1
+      DIST_ID: E2PVKIJ429S3W7
+
+    defaults:
+      run:
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.REGION }}
+
+      - name: Install Dependencies
+        run: |
+          node --version
+          npm install
+
+      - name: Build Static Website
+        run: |
+          npm run build
+
+      - name: Copy files to the production website with the AWS CLI
+        run: |
+          aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }}
+
+      - name: Copy files to the production website with the AWS CLI
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.DIST_ID }} \
+            --paths "/*"
+  build-and-deploy-server:
+    name: Build and Deploy Server
+    runs-on: self-hosted
+    environment: deploy:server
+    env:
+      WORKING_DIRECTORY: ./server
+    defaults:
+      run:
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create Env File
+        run: |
+          echo POSTGRES_HOST=${{ secrets.POSTGRES_HOST }} >> .production.env
+          echo POSTGRES_PORT=${{ secrets.POSTGRES_PORT }} >> .production.env
+          echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .production.env
+          echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .production.env
+          echo POSTGRES_DB=${{ secrets.POSTGRES_DB }} >> .production.env
+          echo PORT=${{ secrets.PORT }} >> .production.env
+          echo PGADMIN_DEFAULT_EMAIL=${{ secrets.PGADMIN_DEFAULT_EMAIL }} >> .production.env
+          echo PGADMIN_DEFAULT_PASSWORD=${{ secrets.PGADMIN_DEFAULT_PASSWORD }} >> .production.env
+      - name: Stop all running containers
+        run: docker compose down --rmi all
+
+      - name: Start containers
+        run: docker compose build --no-cache && docker compose up -d --force-recreate

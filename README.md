@@ -27,6 +27,57 @@ Below are links to the client and server parts of the application.
 
 ### 🛠 [SchoolBook Server Side](./server/README.md)
 
+---
+
+<details>
+  <summary>Authorization data (parents)</summary>
+
+  |Username|Password|
+  |---|---|
+  |lena_rowe46|qodijofici|
+  |pablokshlerin79|vizipulaxa|
+  |jeffreyboyer72|kekekoleko|
+  |veraokon55|ticuwakepo|
+  |alberto85|lumavajazi|
+  |hectorhagenes99|vosoketiyo|
+  |rosalie.christiansen|volipegapi||
+  |todd_collier73|luxutaceti|
+  |billgreenholt19|qudelezisu|
+  |hugo50|dunuxujawu|
+  |jacob.cole34|diyinojoza|
+  |mamie.mueller90|yuxubabezi|
+  |marvinyost37|qudonayewu|
+  |sidney_veum|jazupofinu|
+  |elsie_rodriguez43|xesumalige|
+  |ashley.legros|welagazire|
+  |pearl_stracke|viwutuyoka|
+  |sophie_fisher53|nayiganino|
+  |garrett52|husagebike|
+  |wilsonhettinger61|riramudola|
+  |darin.howell|gahagosuga|
+  |betty_effertz36|focevoriji|
+  |kristie.mosciski|jabilarica|
+  |carrollmcdermott92|danuyasifo|
+  |violet.harvey13|gegokuhalo|
+  |leland_wolf|jegozoxefa|
+  |mathew_smitham|lahenucomu|
+  |milton_medhurst|savujetiza|
+  |laverne80|ganutaqari|
+</details>
+<details>
+  <summary>Authorization data (teachers)</summary>
+
+  |Username|Password|
+  |---|---|
+  |wayne_purdy02|qozakufusu|
+  |juliusrau56|vuyeyinuhe|
+  |ian.skiles6945|yifuvevuyu||
+  |myrtle_huel|dopujaledi|
+  |clint_kozey37|tisibomogu|
+</details>
+
+---
+
 ## Authors
 
 👤 **Anastasia Arzhanik**
