@@ -1,14 +1,14 @@
 <h1 align="center">Welcome to School Book Client 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://school-book-production.up.railway.app/api/docs" target="_blank">
+  <a href="https://api.school-book.wowblvck.tech/" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
 </p>
 
 > The client part of the SchoolBook application by the task of RS Clone of the Rolling Scopes School
 
-### ✨ [Demo](https://school-record-book-rss.netlify.app/)
+### ✨ [Demo](https://school-book.wowblvck.tech/)
 
 ## Install
 
@@ -40,4 +40,4 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 ## 🚀 Features
 
-### [Features](./docs/FEATURES.md)
+### [Features](docs/FEATURES.md)

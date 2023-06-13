@@ -1,14 +1,14 @@
 <h1 align="center">Welcome to School Book API 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://school-book-production.up.railway.app/api/docs" target="_blank">
+  <a href="https://api.school-book.wowblvck.tech/" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
 </p>
 
 > API for the School Book project by Rolling Scopes School's RS Clone
 
-### ✨ [Demo](https://school-record-book-rss.netlify.app/)
+### ✨ [Demo](https://school-book.wowblvck.tech/)
 
 ## Install
 

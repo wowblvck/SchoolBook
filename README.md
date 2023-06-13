@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to School Book Application 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://school-book-production.up.railway.app/api/docs" target="_blank">
+  <a href="https://api.school-book.wowblvck.tech/" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
 </p>
@@ -21,7 +21,7 @@ Below are links to the client and server parts of the application.
 
 ---
 
-### ✨ [Demo](https://school-record-book-rss.netlify.app/)
+### ✨ [Demo](https://school-book.wowblvck.tech/)
 
 ### 💡 [SchoolBook Client Side](./client/README.md)
 
