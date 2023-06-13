@@ -5,7 +5,11 @@ on:
     branches: [develop]
     paths:
       - "client/**"
+      - "!client/docs/**"
+      - "!client/README.md"
       - "server/**"
+      - "!server/docs/**"
+      - "!server/README.md"
 
 jobs:
   build-and-deploy-client:
